@@ -46,3 +46,10 @@ You will need a RISC-V "newlib" tool chain from
 https://github.com/riscv/riscv-gnu-toolchain, and qemu compiled for
 riscv64-softmmu.  Once they are installed, and in your shell
 search path, you can run "make qemu".
+## Proposed Components and Implementation Techniques
+ #  Component | Implementation Technique 
+1  Process Management | Extend `kernel/proc.c` to implement process monitoring and display process information such as PID, state, and process name. 
+2  Memory Management | Extend `kernel/kalloc.c` and `kernel/vm.c` to implement memory usage tracking and display memory allocation information. 
+3 File System | Extend `kernel/fs.c` and `kernel/file.c` to implement an additional file-management feature for handling file information and operations.  
+4  System Call Management | Implement a custom system call by modifying `kernel/syscall.c`, `kernel/syscall.h`, `kernel/sysproc.c`, and the required user-space files. 
+5  Device and Console Management | Extend `kernel/console.c` and `kernel/uart.c` to implement an additional console or device-related feature. 
