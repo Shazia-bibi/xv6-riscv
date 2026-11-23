@@ -46,3 +46,94 @@ You will need a RISC-V "newlib" tool chain from
 https://github.com/riscv/riscv-gnu-toolchain, and qemu compiled for
 riscv64-softmmu.  Once they are installed, and in your shell
 search path, you can run "make qemu".
+ADVANCED KERNEL FEATURES: 
+
+Objective:
+Extend the kernel with 10 monitoring, management, and simulation modules
+(5 Operating System + 5 Computer Architecture), each with 3 extensions,
+so the kernel is observable, measurable, and useful for learning.
+
+Benefits:
+- Visibility into processes, memory, and system calls
+- Better resource management
+- Hands-on architecture learning
+- Built-in performance metrics
+- Modular design
+
+
+1. OPERATING SYSTEM MODULES
+
+
+1. Process Information Module
+   Purpose: View PID, process name, and state
+   Extensions:
+   - Parent-child process tree
+   - Per-process CPU time and memory usage
+   - Sorting and filtering
+
+2. System Call Counter Module
+   Purpose: Count how often each system call is executed
+   Extensions:
+   - Per-process syscall counters
+   - Syscall latency measurement
+   - Top-N syscalls with reset and export
+
+3. Memory Usage Monitor
+   Purpose: Track used and free memory
+   Extensions:
+   - Per-process memory usage
+   - Fragmentation and page/frame statistics
+   - Low-memory threshold warnings
+
+4. File Management Module
+   Purpose: Create, read, write, and delete files
+   Extensions:
+   - Rename, copy, and move
+   - File metadata and permissions
+   - Directory listing and file search
+
+5. Process Priority Management
+   Purpose: Priority-based scheduling
+   Extensions:
+   - Aging to prevent starvation
+   - Multiple scheduling policies (RR, Priority, SJF)
+   - Runtime priority change (renice)
+
+
+2. COMPUTER ARCHITECTURE MODULES
+
+
+1. Number System Converter
+   Purpose: Binary, Decimal, Hexadecimal conversion
+   Extensions:
+   - Octal and signed numbers (two's complement)
+   - Floating-point (IEEE-754) conversion
+   - Bit-width selection, endianness view, batch mode
+
+2. Cache Memory Simulator
+   Purpose: Simulate cache and show hits and misses
+   Extensions:
+   - Configurable size, block size, associativity
+   - Replacement policies (LRU, FIFO, Random)
+   - Multi-level cache (L1/L2) with AMAT report
+
+3. RISC-V Instruction Decoder
+   Purpose: Decode opcodes and register information
+   Extensions:
+   - All formats (R, I, S, B, U, J)
+   - Assembly mnemonic output with immediates
+   - Batch decoding from hex file and encoder
+
+4. CPU Performance Calculator
+   Purpose: Calculate CPI and related metrics
+   Extensions:
+   - CPU time, MIPS, and clock rate
+   - Weighted CPI from instruction mix
+   - Speedup comparison (Amdahl's Law)
+
+5. Branch Prediction Simulator
+   Purpose: Simulate Taken/Not Taken and compute accuracy
+   Extensions:
+   - 1-bit and 2-bit saturating-counter predictors
+   - History-based predictors (BHT, gshare)
+   - Trace-file input and predictor comparison
