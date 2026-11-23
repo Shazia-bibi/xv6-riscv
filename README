@@ -117,7 +117,7 @@ Benefits:
    - Replacement policies (LRU, FIFO, Random)
    - Multi-level cache (L1/L2) with AMAT report
 
-3. RISC-V Instruction Decoder
+3. RISC-V Instruction Decodergit status
    Purpose: Decode opcodes and register information
    Extensions:
    - All formats (R, I, S, B, U, J)
